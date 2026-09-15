@@ -1,0 +1,18 @@
+{
+  "root": true,
+  "env": { "browser": true, "es2022": true, "node": true },
+  "parserOptions": { "ecmaVersion": 2022, "sourceType": "module" },
+  "plugins": ["cypress"],
+  "extends": ["eslint:recommended", "plugin:cypress/recommended"],
+  "rules": {
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
+    "no-console": "warn",
+    "eqeqeq": ["error", "always"],
+    "prefer-const": "error",
+    "no-var": "error",
+    "cypress/no-unnecessary-waiting": "error",
+    "cypress/assertion-before-screenshot": "warn",
+    "cypress/no-assigning-return-values": "error"
+  },
+  "ignorePatterns": ["node_modules/", "cypress/reports/", "cypress/videos/", "cypress/screenshots/"]
+}
