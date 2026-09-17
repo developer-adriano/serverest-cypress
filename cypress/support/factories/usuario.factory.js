@@ -5,6 +5,8 @@ import { faker } from '@faker-js/faker';
  * qualquer campo para montar cenarios negativos.
  *
  * O email e sempre unico: o ServeRest rejeita duplicidade no ambiente inteiro.
+ * O dominio precisa ter um TLD real: a validacao de email da API recusa TLDs
+ * reservados como `.test` com "email deve ser um email valido".
  */
 export const usuarioFactory = {
   build({ administrador = 'true', ...overrides } = {}) {
@@ -12,7 +14,7 @@ export const usuarioFactory = {
 
     return {
       nome: faker.person.fullName(),
-      email: `qa.${sufixo}@serverest.test`.toLowerCase(),
+      email: `qa.${sufixo}@example.com`.toLowerCase(),
       password: faker.internet.password({ length: 12 }),
       administrador,
       ...overrides,

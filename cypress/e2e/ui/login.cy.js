@@ -61,7 +61,7 @@ describe('E2E | Login', () => {
       },
       {
         titulo: 'quando a senha nao e informada',
-        credenciais: () => ({ email: 'usuario.inexistente@serverest.test', password: '' }),
+        credenciais: () => ({ email: 'usuario.inexistente@example.com', password: '' }),
         mensagem: UI_MESSAGES.SENHA_OBRIGATORIA,
       },
     ];

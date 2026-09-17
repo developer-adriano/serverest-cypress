@@ -63,9 +63,9 @@ Cypress.Commands.add('sessaoAdmin', (usuario) => {
 Cypress.Commands.add('removerProdutoPorNome', (nome, token) =>
   produtosService.buscarPorNome(nome).then(({ body }) => {
     const produto = body.produtos?.find((item) => item.nome === nome);
-    if (produto) {
-      produtosService.remove(produto._id, token);
+    if (!produto) {
+      return undefined;
     }
-    return produto;
+    return produtosService.remove(produto._id, token).then(() => produto);
   })
 );
