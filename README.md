@@ -1,6 +1,8 @@
 # ServeRest — Automação de Testes E2E e API
 
-[![CI](https://github.com/<usuario>/serverest-cypress/actions/workflows/ci.yml/badge.svg)](https://github.com/<usuario>/serverest-cypress/actions/workflows/ci.yml)
+[![CI](https://github.com/developer-adriano/serverest-cypress/actions/workflows/ci.yml/badge.svg)](https://github.com/developer-adriano/serverest-cypress/actions/workflows/ci.yml)
+
+**QA Engineer:** Adriano Oliveira
 
 Suíte de testes automatizados da aplicação [ServeRest](https://serverest.dev), construída com **Cypress** e **JavaScript**, cobrindo o frontend ([front.serverest.dev](https://front.serverest.dev)) e a API REST ([serverest.dev](https://serverest.dev)).
 
@@ -10,16 +12,16 @@ O projeto foi estruturado em camadas — **Page Object Model** para a interface 
 
 ## Stack
 
-| Ferramenta | Versão | Uso |
-|---|---|---|
-| Cypress | 13.x | Runner de testes E2E e de API |
-| JavaScript | ES2022 (ESM) | Linguagem |
-| @faker-js/faker | 8.x | Geração de massa de dados |
-| Ajv + ajv-formats | 8.x | Validação de contrato (JSON Schema) |
-| ESLint + Prettier | 8.x / 3.x | Padronização de código |
-| Husky + commitlint + lint-staged | — | Qualidade no commit |
-| Mochawesome | 7.x | Relatórios de execução |
-| GitHub Actions | — | Integração contínua |
+| Ferramenta                       | Versão       | Uso                                 |
+| -------------------------------- | ------------ | ----------------------------------- |
+| Cypress                          | 13.x         | Runner de testes E2E e de API       |
+| JavaScript                       | ES2022 (ESM) | Linguagem                           |
+| @faker-js/faker                  | 8.x          | Geração de massa de dados           |
+| Ajv + ajv-formats                | 8.x          | Validação de contrato (JSON Schema) |
+| ESLint + Prettier                | 8.x / 3.x    | Padronização de código              |
+| Husky + commitlint + lint-staged | —            | Qualidade no commit                 |
+| Mochawesome                      | 7.x          | Relatórios de execução              |
+| GitHub Actions                   | —            | Integração contínua                 |
 
 Requisito: **Node.js 18+**.
 
@@ -107,18 +109,18 @@ docs/
 
 ### Interface (E2E)
 
-| ID | Cenário | Arquivo |
-|---|---|---|
-| CT-E2E-001 | Login com credenciais válidas de administrador redireciona ao painel, exibe a saudação e o menu administrativo completo, e grava o token de sessão | `ui/login.cy.js` |
-| CT-E2E-002 | Login inválido exibe a mensagem correta e mantém o usuário na tela — cobre usuário inexistente, email vazio e senha vazia (data-driven), além do fechamento do alerta | `ui/login.cy.js` |
-| CT-E2E-003 | Administrador cadastra produto, é redirecionado à listagem, encontra os dados corretos na mesma linha da tabela e a persistência é confirmada na API | `ui/produtos.cy.js` |
+| ID         | Cenário                                                                                                                                                               | Arquivo             |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| CT-E2E-001 | Login com credenciais válidas de administrador redireciona ao painel, exibe a saudação e o menu administrativo completo, e grava o token de sessão                    | `ui/login.cy.js`    |
+| CT-E2E-002 | Login inválido exibe a mensagem correta e mantém o usuário na tela — cobre usuário inexistente, email vazio e senha vazia (data-driven), além do fechamento do alerta | `ui/login.cy.js`    |
+| CT-E2E-003 | Administrador cadastra produto, é redirecionado à listagem, encontra os dados corretos na mesma linha da tabela e a persistência é confirmada na API                  | `ui/produtos.cy.js` |
 
 ### API
 
-| ID | Cenário | Arquivo |
-|---|---|---|
-| CT-API-001 | `POST /usuarios` — cadastro com sucesso (status, mensagem, `_id`, contrato e persistência via `GET`), unicidade de email e campo obrigatório ausente | `api/usuarios.cy.js` |
-| CT-API-002 | `POST /login` — emissão de token com prefixo `Bearer` e contrato validado, senha incorreta (401) e email em formato inválido (400) | `api/login.cy.js` |
+| ID         | Cenário                                                                                                                                                      | Arquivo              |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------- |
+| CT-API-001 | `POST /usuarios` — cadastro com sucesso (status, mensagem, `_id`, contrato e persistência via `GET`), unicidade de email e campo obrigatório ausente         | `api/usuarios.cy.js` |
+| CT-API-002 | `POST /login` — emissão de token com prefixo `Bearer` e contrato validado, senha incorreta (401) e email em formato inválido (400)                           | `api/login.cy.js`    |
 | CT-API-003 | `POST /produtos` — autorização em três condições (admin 201, sem token 401, não-admin 403), persistência com contrato validado, exclusão e unicidade de nome | `api/produtos.cy.js` |
 
 ---
@@ -179,3 +181,11 @@ Achados levantados durante o mapeamento da aplicação. Nenhum deles impede a ex
 - [`docs/SPEC.md`](docs/SPEC.md) — especificação técnica: arquitetura, padrões, cenários detalhados e Definition of Done.
 - [`docs/ELEMENTS-MAP.md`](docs/ELEMENTS-MAP.md) — mapa completo dos elementos da interface, alertas e armadilhas conhecidas.
 - [`docs/API-REFERENCE.md`](docs/API-REFERENCE.md) — endpoints, payloads, regras de negócio, catálogo de mensagens e schemas.
+
+---
+
+## Autoria
+
+**Adriano Oliveira** — QA Engineer
+
+[github.com/developer-adriano](https://github.com/developer-adriano)
